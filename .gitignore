@@ -1,0 +1,12 @@
+# Local environment variables
+.env
+
+# Python artifacts
+__pycache__/
+*.pyc
+venv/
+
+# Local data and uploads
+data/vector_store/
+uploads/*
+!uploads/.gitkeep

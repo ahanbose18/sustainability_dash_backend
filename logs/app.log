@@ -1,0 +1,23 @@
+2026-02-16 21:57:23.088 | INFO     | __main__:<module>:42 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-16 21:59:24.551 | INFO     | main:health_check:33 - Health check pinged.
+2026-02-16 22:07:03.795 | INFO     | main:health_check:33 - Health check pinged.
+2026-02-16 22:09:02.398 | INFO     | main:health_check:33 - Health check pinged.
+2026-02-16 22:09:37.415 | INFO     | services.data_analytics:get_joined_dashboard_data:65 - Successfully joined and retrieved 180 metrics.
+2026-02-16 22:09:54.629 | INFO     | services.data_analytics:get_joined_dashboard_data:65 - Successfully joined and retrieved 180 metrics.
+2026-02-16 22:10:16.730 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:10:16.792 | INFO     | services.data_analytics:get_joined_dashboard_data:65 - Successfully joined and retrieved 180 metrics.
+2026-02-16 22:10:17.192 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 22:17:54.712 | INFO     | __main__:<module>:42 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-16 22:18:12.557 | INFO     | main:health_check:33 - Health check pinged.
+2026-02-16 22:18:18.310 | INFO     | services.data_analytics:get_joined_dashboard_data:65 - Successfully joined and retrieved 180 metrics.
+2026-02-16 22:18:25.273 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:18:25.366 | INFO     | services.data_analytics:get_joined_dashboard_data:65 - Successfully joined and retrieved 180 metrics.
+2026-02-16 22:18:25.791 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 22:22:43.158 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:22:44.609 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 22:34:31.728 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:36:19.394 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 22:36:20.726 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:36:24.980 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 22:36:26.174 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-16 22:36:27.081 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.

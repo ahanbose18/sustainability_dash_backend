@@ -1,0 +1,23 @@
+# --- Web Framework & Server ---
+fastapi==0.129.0
+uvicorn==0.34.0
+pydantic-settings==2.10.1
+python-multipart==0.0.20
+
+# --- Data Science & Analytics ---
+pandas==2.2.3
+openpyxl==3.1.5
+numpy==2.2.2
+scikit-learn==1.6.1
+
+# --- Utilities & Production ---
+python-dotenv==1.0.1
+loguru==0.7.3
+
+# --- AI Libraries (Commented out for MVP to avoid conflicts) ---
+langchain-community==0.4.1
+# langchain-openai
+# langchain-huggingface
+# langgraph
+# qdrant-client
+# pypdf
