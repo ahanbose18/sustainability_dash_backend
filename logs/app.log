@@ -21,3 +21,4 @@
 2026-02-16 22:36:24.980 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
 2026-02-16 22:36:26.174 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
 2026-02-16 22:36:27.081 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
+2026-02-16 23:30:04.310 | INFO     | __main__:<module>:42 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000

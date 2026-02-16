@@ -16,7 +16,10 @@ app = FastAPI(
 # This is CRITICAL for Lovable to be able to talk to your local machine
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with your frontend URL
+    allow_origins=[
+            "http://localhost:5173",
+            "https://lovable.dev",
+                   "*"],  # In production, replace with your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
