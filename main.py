@@ -27,8 +27,8 @@ app.add_middleware(
 
 # 3. Include Versioned API Routes
 # All dashboard routes will now start with /api/v1/dashboard
-app.include_router(dashboard_router, prefix="/api/v1")
-
+# app.include_router(dashboard_router, prefix="/api/v1")
+app.include_router(dashboard_router)
 # 4. Health Check Endpoint
 @app.get("/", tags=["Health"])
 async def health_check():
