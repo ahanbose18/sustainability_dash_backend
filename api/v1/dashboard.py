@@ -5,6 +5,7 @@ from models.schemas import DashboardResponse
 from utils.logger import logger
 
 # Initialize the router and service
+# The prefix /dashboard ensures URLs like http://127.0.0.1:8000/dashboard/metrics
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 data_service = DataAnalyticsService()
 
@@ -12,31 +13,24 @@ data_service = DataAnalyticsService()
 async def get_campus_metrics():
     """
     Fetch comprehensive sustainability metrics for SPJIMR.
-    Includes: 
-    1. Joining Facts with Building Dimensions
-    2. Running Isolation Forest for Anomaly Detection
+    The Service layer now handles:
+    1. Joining Facts + Blocks + Buildings (Snowflake Join)
+    2. Isolation Forest Anomaly Detection
+    3. Cleaning NaNs and Renaming columns to match the Response Model
     """
     logger.info("Request received: Fetching comprehensive campus metrics.")
     
     try:
-        # 1. Retrieve the joined data (Facts + Building Names)
-        raw_data = data_service.get_joined_dashboard_data()
+        # Retrieve the fully processed and enriched data from the service
+        final_list = data_service.get_joined_dashboard_data()
         
-        if not raw_data:
-            logger.warning("No data found in the Excel source.")
+        if not final_list:
+            logger.warning("No data found or processed from the Excel source.")
             return {"status": "success", "data": []}
 
-        # 2. Convert to DataFrame to run AI/Analytics
-        df = pd.DataFrame(raw_data)
-
-        # 3. Apply Anomaly Detection (Isolation Forest)
-        # This adds the 'is_anomaly' boolean to our dataset
-        df_enriched = data_service.detect_anomalies(df)
-
-        # 4. Final cleaning for JSON response
-        final_list = df_enriched.to_dict(orient="records")
+        logger.info(f"Successfully returning {len(final_list)} rows of validated ESG data.")
         
-        logger.info(f"Returning {len(final_list)} rows with anomaly detection applied.")
+        # Return the clean dictionary list directly to the Pydantic validator
         return {
             "status": "success",
             "data": final_list
@@ -44,40 +38,46 @@ async def get_campus_metrics():
         
     except Exception as e:
         logger.error(f"Failed to process dashboard metrics: {e}")
+        # Raising a 500 here if Pydantic validation fails or data is missing
         raise HTTPException(
             status_code=500, 
-            detail="Error processing SPJIMR campus data. Check logs for details."
+            detail=f"Internal Server Error: {str(e)}"
         )
 
 @router.get("/alerts")
 async def get_sustainability_alerts():
     """
     Returns ONLY the anomalies detected in the last cycle.
-    Perfect for an 'Alerts' or 'Action Required' panel in Lovable.
+    Filters the enriched data for rows where 'is_anomaly' is True.
     """
-    raw_data = data_service.get_joined_dashboard_data()
-    if not raw_data:
-        return {"status": "success", "alerts": []}
+    try:
+        data = data_service.get_joined_dashboard_data()
+        if not data:
+            return {"status": "success", "alerts": []}
 
-    df = pd.DataFrame(raw_data)
-    df_enriched = data_service.detect_anomalies(df)
-    
-    # Filter for only the anomalies
-    alerts = df_enriched[df_enriched['is_anomaly'] == True]
-    
-    return {
-        "status": "success",
-        "count": len(alerts),
-        "alerts": alerts.to_dict(orient="records")
-    }
+        # Filter for only the anomalies using list comprehension
+        alerts = [row for row in data if row.get('is_anomaly') is True]
+        
+        return {
+            "status": "success",
+            "count": len(alerts),
+            "alerts": alerts
+        }
+    except Exception as e:
+        logger.error(f"Alerts endpoint failed: {e}")
+        return {"status": "error", "message": str(e)}
 
 @router.get("/summary")
 async def get_dashboard_summary():
     """
-    Returns high-level cards: Total Consumption, Top Consumer, and Efficiency.
+    Returns high-level summary statistics (Total Energy, Water, CO2).
     """
-    stats = data_service.get_summary_stats()
-    return {
-        "status": "success",
-        "summary": stats
-    }
+    try:
+        stats = data_service.get_summary_stats()
+        return {
+            "status": "success",
+            "summary": stats
+        }
+    except Exception as e:
+        logger.error(f"Summary endpoint failed: {e}")
+        return {"status": "error", "summary": {}}

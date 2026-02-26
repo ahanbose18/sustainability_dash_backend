@@ -8,7 +8,7 @@ class BuildingDim(BaseModel):
     BuildingKey: int
     BuildingName: str
     TotalFloors: int
-    Type: str  # e.g., Academic, Residential, Amenities
+    BuildingCategory: str  # e.g., Academic, Residential, Amenities
 
 class BlockDim(BaseModel):
     """Schema for the DimBlocks sheet (The SPJIMR wings)."""
@@ -19,13 +19,13 @@ class BlockDim(BaseModel):
 
 # --- Fact & Response Schemas ---
 
-class ConsumptionFact(BaseModel):
-    """Schema for the main Facts sheet."""
-    Date: str
-    BuildingKey: int
-    Consumption: float
-    Goal: float
-    MetricType: str = "Energy"
+# class ValueFact(BaseModel):
+#     """Schema for the main Facts sheet."""
+#     Date: str
+#     BuildingKey: int
+#     Value: float
+#     Goal: float
+#     MetricBuildingCategory: str = "Energy"
 
 class JoinedDashboardData(BaseModel):
     """
@@ -34,10 +34,25 @@ class JoinedDashboardData(BaseModel):
     """
     Date: str
     BuildingName: str
-    Consumption: float
+    BlockID: int
+    BlockName: str
+    Value: float
     Goal: float
-    Type: str
+    BuildingCategory: str
+    CO2_Emissions: float
     is_anomaly: bool = False
+    anomaly_type: str = "Normal"  # "High (Waste)", "Low (Potential Failure)", or "Normal"
+
+class DashboardSummary(BaseModel):
+    """Schema for the top-level summary statistics."""
+    total_value: float
+    avg_value: float
+    total_co2: float
+    avg_co2: float
+    top_consumer_building: str
+    top_consumer_block: str
+    low_anomalies: int
+    high_anomalies: int
 
 class DashboardResponse(BaseModel):
     """The top-level JSON response for the frontend."""

@@ -22,3 +22,55 @@
 2026-02-16 22:36:26.174 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
 2026-02-16 22:36:27.081 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 180 rows with anomaly detection applied.
 2026-02-16 23:30:04.310 | INFO     | __main__:<module>:42 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-17 12:30:45.551 | INFO     | __main__:<module>:45 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-17 12:33:55.598 | INFO     | main:health_check:36 - Health check pinged.
+2026-02-17 12:35:55.107 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:35:55.770 | ERROR    | services.data_analytics:get_joined_dashboard_data:68 - SERVICE ERROR: 'BuildingKey'
+2026-02-17 12:35:55.771 | WARNING  | api.v1.dashboard:get_campus_metrics:26 - No data found in the Excel source.
+2026-02-17 12:36:04.690 | ERROR    | services.data_analytics:get_joined_dashboard_data:68 - SERVICE ERROR: 'BuildingKey'
+2026-02-17 12:48:19.787 | INFO     | main:health_check:36 - Health check pinged.
+2026-02-17 12:49:31.596 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:49:32.497 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 12:49:39.150 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:49:40.004 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 12:52:43.808 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:52:44.917 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 12:52:46.611 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:52:47.477 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 12:54:51.050 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:54:51.728 | ERROR    | api.v1.dashboard:get_campus_metrics:46 - Failed to process dashboard metrics: "None of [Index(['Value'], dtype='object')] are in the [columns]"
+2026-02-17 12:59:08.652 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:59:09.155 | ERROR    | api.v1.dashboard:get_campus_metrics:46 - Failed to process dashboard metrics: "None of [Index(['Value'], dtype='object')] are in the [columns]"
+2026-02-17 12:59:11.627 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:59:12.097 | ERROR    | api.v1.dashboard:get_campus_metrics:46 - Failed to process dashboard metrics: "None of [Index(['Value'], dtype='object')] are in the [columns]"
+2026-02-17 12:59:24.157 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 12:59:25.292 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 13:02:22.527 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 13:02:23.617 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 13:02:28.282 | INFO     | api.v1.dashboard:get_campus_metrics:19 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 13:02:29.122 | INFO     | api.v1.dashboard:get_campus_metrics:39 - Returning 510 rows with anomaly detection applied.
+2026-02-17 13:05:28.667 | INFO     | api.v1.dashboard:get_campus_metrics:12 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 13:05:29.343 | INFO     | api.v1.dashboard:get_campus_metrics:22 - Returning 510 rows of validated ESG data.
+2026-02-17 14:57:20.591 | INFO     | __main__:<module>:45 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-17 14:57:36.930 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 14:57:39.470 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 510 rows of validated ESG data.
+2026-02-17 15:21:32.912 | INFO     | __main__:<module>:45 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-17 15:22:19.445 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-17 15:22:20.522 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 180 rows of validated ESG data.
+2026-02-26 11:20:17.631 | INFO     | __main__:<module>:45 - Starting SPJIMR Sustainability Dashboard on http://0.0.0.0:8000
+2026-02-26 11:20:51.753 | INFO     | main:health_check:36 - Health check pinged.
+2026-02-26 11:20:56.697 | ERROR    | services.data_analytics:get_joined_dashboard_data:69 - SERVICE ERROR: "None of [Index(['Consumption'], dtype='object')] are in the [columns]"
+2026-02-26 11:21:04.123 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:21:04.159 | ERROR    | services.data_analytics:get_joined_dashboard_data:69 - SERVICE ERROR: "None of [Index(['Consumption'], dtype='object')] are in the [columns]"
+2026-02-26 11:21:04.992 | WARNING  | api.v1.dashboard:get_campus_metrics:28 - No data found or processed from the Excel source.
+2026-02-26 11:21:11.284 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:21:11.348 | ERROR    | services.data_analytics:get_joined_dashboard_data:69 - SERVICE ERROR: "None of [Index(['Consumption'], dtype='object')] are in the [columns]"
+2026-02-26 11:21:11.349 | WARNING  | api.v1.dashboard:get_campus_metrics:28 - No data found or processed from the Excel source.
+2026-02-26 11:26:37.878 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:26:38.394 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 120 rows of validated ESG data.
+2026-02-26 11:31:43.369 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:31:43.825 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 120 rows of validated ESG data.
+2026-02-26 11:37:00.858 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:37:01.332 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 120 rows of validated ESG data.
+2026-02-26 11:52:09.818 | INFO     | api.v1.dashboard:get_campus_metrics:21 - Request received: Fetching comprehensive campus metrics.
+2026-02-26 11:52:10.427 | INFO     | api.v1.dashboard:get_campus_metrics:31 - Successfully returning 120 rows of validated ESG data.
